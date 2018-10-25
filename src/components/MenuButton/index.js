@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 import { renderLabel } from '../../util'
 
-const MenuButton = ({ label, icon, enabled, active, onClick, style, className }) => {
+const MenuButton = ({ label, icon, enabled, active, onMouseDown, style, className }) => {
 	return <button
 		className={classnames({
 			'text-editor__menu-button': true,
@@ -14,9 +14,9 @@ const MenuButton = ({ label, icon, enabled, active, onClick, style, className })
 		})}
 		style={style}
 		disabled={!enabled}
-		onClick={(e) => {
+		onMouseDown={(e) => {
 			e.preventDefault()
-			onClick()
+			onMouseDown()
 		}}>
 		{icon ? renderLabel(icon) : renderLabel(label)}
 	</button>
@@ -34,7 +34,7 @@ MenuButton.propTypes = {
 	]),
 	enabled: PropTypes.bool.isRequired,
 	active: PropTypes.bool.isRequired,
-	onClick: PropTypes.func.isRequired,
+	onMouseDown: PropTypes.func.isRequired,
 }
 
 export default MenuButton

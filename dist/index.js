@@ -114,7 +114,7 @@ var MenuButton = function MenuButton(_ref) {
       icon = _ref.icon,
       enabled = _ref.enabled,
       active = _ref.active,
-      _onClick = _ref.onClick,
+      _onMouseDown = _ref.onMouseDown,
       style = _ref.style,
       className = _ref.className;
   return React.createElement("button", {
@@ -126,10 +126,10 @@ var MenuButton = function MenuButton(_ref) {
     }),
     style: style,
     disabled: !enabled,
-    onClick: function onClick(e) {
+    onMouseDown: function onMouseDown(e) {
       e.preventDefault();
 
-      _onClick();
+      _onMouseDown();
     }
   }, icon ? renderLabel(icon) : renderLabel(label));
 };
@@ -139,7 +139,7 @@ MenuButton.propTypes = {
   icon: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
   enabled: PropTypes.bool.isRequired,
   active: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired
+  onMouseDown: PropTypes.func.isRequired
 };
 
 var MenuSelect =
@@ -252,14 +252,14 @@ var MenuGroup = function MenuGroup(_ref) {
         return React.createElement(MenuButton, _extends({}, item, {
           key: item.name,
           active: false,
-          onClick: item.command
+          onMouseDown: item.command
         }));
 
       case 'toggle':
         return React.createElement(MenuButton, _extends({}, item, {
           key: item.name,
           active: item.value,
-          onClick: function onClick() {
+          onMouseDown: function onMouseDown() {
             item.command(!item.value);
           }
         }));

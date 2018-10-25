@@ -15,14 +15,14 @@ const MenuGroup = ({ items, style }) => {
 						{...item}
 						key={item.name}
 						active={false}
-						onClick={item.command}>
+						onMouseDown={item.command}>
 					</MenuButton>
 				case 'toggle':
 					return <MenuButton
 						{...item}
 						key={item.name}
 						active={item.value}
-						onClick={() => {
+						onMouseDown={() => {
 							item.command(!item.value)
 						}}>
 					</MenuButton>
