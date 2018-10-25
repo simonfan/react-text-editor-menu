@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Menu from '../../src'
+import { Menu } from '../../src'
 
 import RedoIcon from 'mdi-react/RedoIcon'
 import UndoIcon from 'mdi-react/UndoIcon'
