@@ -1,0 +1,53 @@
+.text-editor__menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 30px;
+
+  padding: 4px;
+  border: 0;
+  margin: 0 1px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.5);
+
+  cursor: pointer;
+
+  border-radius: 2px;
+
+  outline: none;
+}
+
+.text-editor__menu-button:disabled {
+  opacity: .2;
+}
+
+.text-editor__menu-button:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.text-editor__menu-button:active,
+.text-editor__menu-button.active {
+  background-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/**
+ * Icon
+ */
+.text-editor__menu-button.text-editor__menu-button--icon {
+  width: 30px;
+}
+
+.text-editor__menu-button.text-editor__menu-button--icon > svg {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.text-editor__menu-button.text-editor__menu-button--icon:hover > svg {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.text-editor__menu-button.text-editor__menu-button--icon.active > svg {
+  color: rgba(0, 0, 0, 0.9);
+}

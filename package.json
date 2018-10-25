@@ -1,0 +1,37 @@
+{
+  "name": "text-editor-menu",
+  "version": "0.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "serve": "browser-sync start --server demo --serveStatic src --watch --ignore **/*/index.js --no-ui --no-ghost-mode",
+    "dev-serve": "npm run serve & rollup --config ./rollup/dev.config.js --watch",
+    "dev-test": "jest --watch",
+    "bundle": "rollup --config ./rollup/dev.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "browser-sync": "^2.24.7",
+    "jest": "^23.6.0",
+    "mdi-react": "^4.4.0",
+    "react-dom": "^16.5.2",
+    "rollup": "^0.66.4",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-replace": "^2.1.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2"
+  }
+}

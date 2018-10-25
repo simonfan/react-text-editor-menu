@@ -1,0 +1,4 @@
+@import './components/Menu/styles.css';
+@import './components/MenuGroup/styles.css';
+@import './components/MenuButton/styles.css';
+@import './components/MenuSelect/styles.css';
