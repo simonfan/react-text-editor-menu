@@ -43,7 +43,7 @@ class MenuSelect extends React.Component {
 
 	render() {
 		const { options, value, onChange, style } = this.props
-		const selected = options.find(option => option.value === value) || options[0]
+		const selected = options.find(option => option.value === value) || false
 
 		const { open } = this.state
 
@@ -60,7 +60,7 @@ class MenuSelect extends React.Component {
 						open: !open
 					})
 				}}>
-				{selected.label}
+				{selected ? selected.label : ''}
 			</div>
 			<ul>
 				{options.map(option => {

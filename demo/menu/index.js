@@ -25,7 +25,7 @@ const STATE = {
 		underline: true,
 	},
 	listStyle: 'none',
-	textType: 'h2',
+	textType: false,
 }
 
 const menuGroups = state => ([
