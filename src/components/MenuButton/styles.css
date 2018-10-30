@@ -1,4 +1,4 @@
-.text-editor__menu-button {
+.text-editor-menu__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,17 +18,18 @@
   outline: none;
 }
 
-.text-editor__menu-button:disabled {
+.text-editor-menu__button:disabled {
   opacity: .2;
+  cursor: default;
 }
 
-.text-editor__menu-button:hover {
+.text-editor-menu__button:hover:not(:disabled) {
   background-color: rgba(0, 0, 0, 0.06);
   color: rgba(0, 0, 0, 0.9);
 }
 
-.text-editor__menu-button:active,
-.text-editor__menu-button.active {
+.text-editor-menu__button:active,
+.text-editor-menu__button.active {
   background-color: rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.9);
 }
@@ -36,18 +37,18 @@
 /**
  * Icon
  */
-.text-editor__menu-button.text-editor__menu-button--icon {
+.text-editor-menu__button.text-editor-menu__button--icon {
   width: 30px;
 }
 
-.text-editor__menu-button.text-editor__menu-button--icon > svg {
+.text-editor-menu__button.text-editor-menu__button--icon > svg {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.text-editor__menu-button.text-editor__menu-button--icon:hover > svg {
+.text-editor-menu__button.text-editor-menu__button--icon:hover:not(:disabled) > svg {
   color: rgba(0, 0, 0, 0.9);
 }
 
-.text-editor__menu-button.text-editor__menu-button--icon.active > svg {
+.text-editor-menu__button.text-editor-menu__button--icon.active > svg {
   color: rgba(0, 0, 0, 0.9);
 }

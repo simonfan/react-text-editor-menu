@@ -6,7 +6,7 @@ import MenuSelect from '../MenuSelect'
 
 const MenuGroup = ({ items, style }) => {
 	return <div
-		className='text-editor__menu-group'
+		className='text-editor-menu__menu-group'
 		style={style}>
 		{items.map(item => {
 			switch (item.type) {

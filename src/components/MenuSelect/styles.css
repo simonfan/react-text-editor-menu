@@ -1,4 +1,4 @@
-.text-editor__menu-select {
+.text-editor-menu__select {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.12);
 
@@ -7,7 +7,7 @@
   border-radius: 2px;
 }
 
-.text-editor__menu-select > .text-editor__menu-select__selected {
+.text-editor-menu__select > .text-editor-menu__select__selected {
   display: flex;
   align-items: center;
 
@@ -19,7 +19,7 @@
   height: 100%;
 }
 
-.text-editor__menu-select > ul {
+.text-editor-menu__select > ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -38,11 +38,11 @@
   background-color: white;
 }
 
-.text-editor__menu-select.open > ul {
+.text-editor-menu__select.open > ul {
   display: flex;
 }
 
-.text-editor__menu-select > ul > li {
+.text-editor-menu__select > ul > li {
   padding: 4px 10px;
   box-sizing: border-box;
   cursor: pointer;
@@ -54,23 +54,23 @@
   min-height: 30px;
 }
 
-.text-editor__menu-select > ul > li:first-child {
+.text-editor-menu__select > ul > li:first-child {
   padding-top: 6px;
 }
 
-.text-editor__menu-select > ul > li:last-child {
+.text-editor-menu__select > ul > li:last-child {
   padding-bottom: 6px;
 }
 
-.text-editor__menu-select > ul > li:hover:not(.disabled) {
+.text-editor-menu__select > ul > li:hover:not(.disabled) {
   background-color: rgba(0, 0, 0, 0.12);
 }
 
-.text-editor__menu-select > ul > li.disabled {
+.text-editor-menu__select > ul > li.disabled {
   opacity: 0.6;
 }
 
-.text-editor__menu-select > ul > li > * {
+.text-editor-menu__select > ul > li > * {
   margin: 0;
   white-space: nowrap;
 }

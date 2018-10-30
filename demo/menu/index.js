@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Menu } from '../../src'
+import { MenuBar } from '../../src'
 
 import RedoIcon from 'mdi-react/RedoIcon'
 import UndoIcon from 'mdi-react/UndoIcon'
@@ -12,7 +12,7 @@ import FormatListBulletedIcon from 'mdi-react/FormatListBulletedIcon'
 import FormatListNumbersIcon from 'mdi-react/FormatListNumbersIcon'
 import FormatIndentDecreaseIcon from 'mdi-react/FormatIndentDecreaseIcon'
 
-const STATE = {
+const INITIAL_STATE = {
 	undo: {
 		possible: false,
 	},
@@ -193,7 +193,7 @@ const menuGroups = state => ([
 
 const renderApp = (state) => {
 	render(
-		<Menu
+		<MenuBar
 			groups={menuGroups(state)}
 			style={{
 				backgroundColor: 'white',
@@ -203,4 +203,4 @@ const renderApp = (state) => {
 	)
 }
 
-renderApp(STATE)
+renderApp(INITIAL_STATE)

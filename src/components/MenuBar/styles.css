@@ -1,4 +1,4 @@
-.text-editor-menu {
+.text-editor-menu__bar {
 	display: flex;
 	flex-direction: row;
 }

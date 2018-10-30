@@ -1,14 +1,14 @@
-.text-editor__menu-group {
+.text-editor-menu__menu-group {
 	display: flex;
 	flex-direction: row;
 
 	padding: 0 3px;
 }
 
-.text-editor__menu-group:first-of-type {
+.text-editor-menu__menu-group:first-of-type {
 	padding-left: 0;
 }
 
-.text-editor__menu-group:last-of-type {
+.text-editor-menu__menu-group:last-of-type {
 	padding-right: 0;
 }

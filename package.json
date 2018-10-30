@@ -9,7 +9,7 @@
     "dev-serve": "npm run serve & rollup --config ./rollup/dev.config.js --watch",
     "dev-test": "jest --watch",
     "dev-bundle": "rollup --config ./rollup/dev.config.js",
-    "distribute": "rollup --config ./rollup/distribute.config.js"
+    "distribute": "rm -rf dist && rollup --config ./rollup/distribute.config.js"
   },
   "author": "",
   "license": "ISC",

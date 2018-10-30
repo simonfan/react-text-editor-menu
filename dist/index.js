@@ -10,13 +10,13 @@ var classnames = _interopDefault(require('classnames'));
 var reactDom = require('react-dom');
 var insertCss = _interopDefault(require('insert-css'));
 
-var menuStyles = ".text-editor-menu {\n\tdisplay: flex;\n\tflex-direction: row;\n}\n";
+var menuBarStyles = ".text-editor-menu__bar {\n\tdisplay: flex;\n\tflex-direction: row;\n}\n";
 
-var menuButtonStyles = ".text-editor__menu-button {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  height: 30px;\n\n  padding: 4px;\n  border: 0;\n  margin: 0 1px;\n  background-color: white;\n  color: rgba(0, 0, 0, 0.5);\n\n  cursor: pointer;\n\n  border-radius: 2px;\n\n  outline: none;\n}\n\n.text-editor__menu-button:disabled {\n  opacity: .2;\n}\n\n.text-editor__menu-button:hover {\n  background-color: rgba(0, 0, 0, 0.06);\n  color: rgba(0, 0, 0, 0.9);\n}\n\n.text-editor__menu-button:active,\n.text-editor__menu-button.active {\n  background-color: rgba(0, 0, 0, 0.12);\n  color: rgba(0, 0, 0, 0.9);\n}\n\n/**\n * Icon\n */\n.text-editor__menu-button.text-editor__menu-button--icon {\n  width: 30px;\n}\n\n.text-editor__menu-button.text-editor__menu-button--icon > svg {\n  color: rgba(0, 0, 0, 0.5);\n}\n\n.text-editor__menu-button.text-editor__menu-button--icon:hover > svg {\n  color: rgba(0, 0, 0, 0.9);\n}\n\n.text-editor__menu-button.text-editor__menu-button--icon.active > svg {\n  color: rgba(0, 0, 0, 0.9);\n}\n";
+var menuButtonStyles = ".text-editor-menu__button {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  height: 30px;\n\n  padding: 4px;\n  border: 0;\n  margin: 0 1px;\n  background-color: white;\n  color: rgba(0, 0, 0, 0.5);\n\n  cursor: pointer;\n\n  border-radius: 2px;\n\n  outline: none;\n}\n\n.text-editor-menu__button:disabled {\n  opacity: .2;\n  cursor: default;\n}\n\n.text-editor-menu__button:hover:not(:disabled) {\n  background-color: rgba(0, 0, 0, 0.06);\n  color: rgba(0, 0, 0, 0.9);\n}\n\n.text-editor-menu__button:active,\n.text-editor-menu__button.active {\n  background-color: rgba(0, 0, 0, 0.12);\n  color: rgba(0, 0, 0, 0.9);\n}\n\n/**\n * Icon\n */\n.text-editor-menu__button.text-editor-menu__button--icon {\n  width: 30px;\n}\n\n.text-editor-menu__button.text-editor-menu__button--icon > svg {\n  color: rgba(0, 0, 0, 0.5);\n}\n\n.text-editor-menu__button.text-editor-menu__button--icon:hover:not(:disabled) > svg {\n  color: rgba(0, 0, 0, 0.9);\n}\n\n.text-editor-menu__button.text-editor-menu__button--icon.active > svg {\n  color: rgba(0, 0, 0, 0.9);\n}\n";
 
-var menuGroupStyles = ".text-editor__menu-group {\n\tdisplay: flex;\n\tflex-direction: row;\n\n\tpadding: 0 3px;\n}\n\n.text-editor__menu-group:first-of-type {\n\tpadding-left: 0;\n}\n\n.text-editor__menu-group:last-of-type {\n\tpadding-right: 0;\n}\n";
+var menuGroupStyles = ".text-editor-menu__menu-group {\n\tdisplay: flex;\n\tflex-direction: row;\n\n\tpadding: 0 3px;\n}\n\n.text-editor-menu__menu-group:first-of-type {\n\tpadding-left: 0;\n}\n\n.text-editor-menu__menu-group:last-of-type {\n\tpadding-right: 0;\n}\n";
 
-var menuSelectStyles = ".text-editor__menu-select {\n  position: relative;\n  border: 1px solid rgba(0, 0, 0, 0.12);\n\n  display: flex;\n\n  border-radius: 2px;\n}\n\n.text-editor__menu-select > .text-editor__menu-select__selected {\n  display: flex;\n  align-items: center;\n\n  user-select: none;\n\n  padding: 0 10px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n}\n\n.text-editor__menu-select > ul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n\n  position: absolute;\n  z-index: 100;\n  top: 100%;\n  left: -1px;\n\n  display: none;\n  /*display: flex;*/\n  flex-direction: column;\n\n  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);\n  border: 1px solid rgba(0, 0, 0, 0.12);\n  background-color: white;\n}\n\n.text-editor__menu-select.open > ul {\n  display: flex;\n}\n\n.text-editor__menu-select > ul > li {\n  padding: 4px 10px;\n  box-sizing: border-box;\n  cursor: pointer;\n  white-space: nowrap;\n\n  display: flex;\n  align-items: center;\n\n  min-height: 30px;\n}\n\n.text-editor__menu-select > ul > li:first-child {\n  padding-top: 6px;\n}\n\n.text-editor__menu-select > ul > li:last-child {\n  padding-bottom: 6px;\n}\n\n.text-editor__menu-select > ul > li:hover:not(.disabled) {\n  background-color: rgba(0, 0, 0, 0.12);\n}\n\n.text-editor__menu-select > ul > li.disabled {\n  opacity: 0.6;\n}\n\n.text-editor__menu-select > ul > li > * {\n  margin: 0;\n  white-space: nowrap;\n}\n";
+var menuSelectStyles = ".text-editor-menu__select {\n  position: relative;\n  border: 1px solid rgba(0, 0, 0, 0.12);\n\n  display: flex;\n\n  border-radius: 2px;\n}\n\n.text-editor-menu__select > .text-editor-menu__select__selected {\n  display: flex;\n  align-items: center;\n\n  user-select: none;\n\n  padding: 0 10px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n}\n\n.text-editor-menu__select > ul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n\n  position: absolute;\n  z-index: 100;\n  top: 100%;\n  left: -1px;\n\n  display: none;\n  /*display: flex;*/\n  flex-direction: column;\n\n  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);\n  border: 1px solid rgba(0, 0, 0, 0.12);\n  background-color: white;\n}\n\n.text-editor-menu__select.open > ul {\n  display: flex;\n}\n\n.text-editor-menu__select > ul > li {\n  padding: 4px 10px;\n  box-sizing: border-box;\n  cursor: pointer;\n  white-space: nowrap;\n\n  display: flex;\n  align-items: center;\n\n  min-height: 30px;\n}\n\n.text-editor-menu__select > ul > li:first-child {\n  padding-top: 6px;\n}\n\n.text-editor-menu__select > ul > li:last-child {\n  padding-bottom: 6px;\n}\n\n.text-editor-menu__select > ul > li:hover:not(.disabled) {\n  background-color: rgba(0, 0, 0, 0.12);\n}\n\n.text-editor-menu__select > ul > li.disabled {\n  opacity: 0.6;\n}\n\n.text-editor-menu__select > ul > li > * {\n  margin: 0;\n  white-space: nowrap;\n}\n";
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -119,8 +119,8 @@ var MenuButton = function MenuButton(_ref) {
       className = _ref.className;
   return React.createElement("button", {
     className: classnames({
-      'text-editor__menu-button': true,
-      'text-editor__menu-button--icon': icon ? true : false,
+      'text-editor-menu__button': true,
+      'text-editor-menu__button--icon': icon ? true : false,
       active: active,
       enabled: enabled
     }),
@@ -204,12 +204,12 @@ function (_React$Component) {
       var open = this.state.open;
       return React.createElement("div", {
         className: classnames({
-          'text-editor__menu-select': true,
+          'text-editor-menu__select': true,
           open: open
         }),
         style: style
       }, React.createElement("div", {
-        className: "text-editor__menu-select__selected",
+        className: "text-editor-menu__select__selected",
         onClick: function onClick() {
           _this2.setState({
             open: !open
@@ -244,7 +244,7 @@ var MenuGroup = function MenuGroup(_ref) {
   var items = _ref.items,
       style = _ref.style;
   return React.createElement("div", {
-    className: "text-editor__menu-group",
+    className: "text-editor-menu__menu-group",
     style: style
   }, items.map(function (item) {
     switch (item.type) {
@@ -280,11 +280,11 @@ MenuGroup.propTypes = {
   items: PropTypes.array.isRequired
 };
 
-var Menu = function Menu(_ref) {
+var MenuBar = function MenuBar(_ref) {
   var groups = _ref.groups,
       style = _ref.style;
   return React.createElement("div", {
-    className: "text-editor-menu",
+    className: "text-editor-menu__bar",
     style: style
   }, groups.map(function (group) {
     return React.createElement(MenuGroup, {
@@ -294,13 +294,13 @@ var Menu = function Menu(_ref) {
   }));
 };
 
-Menu.propTypes = {
+MenuBar.propTypes = {
   groups: PropTypes.array.isRequired
 };
 
-insertCss([menuStyles, menuButtonStyles, menuGroupStyles, menuSelectStyles].join('\n'));
+insertCss("\n".concat(menuBarStyles, "\n").concat(menuButtonStyles, "\n").concat(menuGroupStyles, "\n").concat(menuSelectStyles, "\n"));
 
-exports.Menu = Menu;
+exports.MenuBar = MenuBar;
 exports.MenuButton = MenuButton;
 exports.MenuGroup = MenuGroup;
 exports.MenuSelect = MenuSelect;

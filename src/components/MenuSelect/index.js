@@ -49,12 +49,12 @@ class MenuSelect extends React.Component {
 
 		return <div
 			className={classnames({
-				'text-editor__menu-select': true,
+				'text-editor-menu__select': true,
 				open,
 			})}
 			style={style}>
 			<div
-				className='text-editor__menu-select__selected'
+				className='text-editor-menu__select__selected'
 				onClick={() => {
 					this.setState({
 						open: !open

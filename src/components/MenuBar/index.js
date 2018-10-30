@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import MenuGroup from '../MenuGroup'
 import MenuButton from '../MenuButton'
 
-const Menu = ({ groups, style }) => {
+const MenuBar = ({ groups, style }) => {
 	return <div
-		className='text-editor-menu'
+		className='text-editor-menu__bar'
 		style={style}>
 		{groups.map(group => {
 			return <MenuGroup
@@ -16,9 +16,9 @@ const Menu = ({ groups, style }) => {
 	</div>
 }
 
-Menu.propTypes = {
+MenuBar.propTypes = {
 	groups: PropTypes.array.isRequired,
 }
 
-export default Menu
+export default MenuBar
 

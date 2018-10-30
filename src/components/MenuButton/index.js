@@ -7,8 +7,8 @@ import { renderLabel } from '../../util'
 const MenuButton = ({ label, icon, enabled, active, onMouseDown, style, className }) => {
 	return <button
 		className={classnames({
-			'text-editor__menu-button': true,
-			'text-editor__menu-button--icon': icon ? true : false,
+			'text-editor-menu__button': true,
+			'text-editor-menu__button--icon': icon ? true : false,
 			active,
 			enabled,
 		})}
