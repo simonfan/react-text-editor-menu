@@ -116,6 +116,7 @@ const menuGroups = state => ([
 						value: 'h3',
 						label: 'Heading 3',
 						preview: <h3>Heading 3</h3>,
+						disabled: true
 					},
 					{
 						value: 'h4',

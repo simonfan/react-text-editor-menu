@@ -52,6 +52,7 @@
   align-items: center;
 
   min-height: 30px;
+  user-select: none;
 }
 
 .text-editor-menu__select > ul > li:first-child {
@@ -67,7 +68,7 @@
 }
 
 .text-editor-menu__select > ul > li.disabled {
-  opacity: 0.6;
+  opacity: 0.2;
 }
 
 .text-editor-menu__select > ul > li > * {

@@ -16,7 +16,7 @@ var menuButtonStyles = ".text-editor-menu__button {\n  display: flex;\n  justify
 
 var menuGroupStyles = ".text-editor-menu__menu-group {\n\tdisplay: flex;\n\tflex-direction: row;\n\n\tpadding: 0 3px;\n}\n\n.text-editor-menu__menu-group:first-of-type {\n\tpadding-left: 0;\n}\n\n.text-editor-menu__menu-group:last-of-type {\n\tpadding-right: 0;\n}\n";
 
-var menuSelectStyles = ".text-editor-menu__select {\n  position: relative;\n  border: 1px solid rgba(0, 0, 0, 0.12);\n\n  display: flex;\n\n  border-radius: 2px;\n}\n\n.text-editor-menu__select > .text-editor-menu__select__selected {\n  display: flex;\n  align-items: center;\n\n  user-select: none;\n\n  padding: 0 10px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n}\n\n.text-editor-menu__select > ul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n\n  position: absolute;\n  z-index: 100;\n  top: 100%;\n  left: -1px;\n\n  display: none;\n  /*display: flex;*/\n  flex-direction: column;\n\n  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);\n  border: 1px solid rgba(0, 0, 0, 0.12);\n  background-color: white;\n}\n\n.text-editor-menu__select.open > ul {\n  display: flex;\n}\n\n.text-editor-menu__select > ul > li {\n  padding: 4px 10px;\n  box-sizing: border-box;\n  cursor: pointer;\n  white-space: nowrap;\n\n  display: flex;\n  align-items: center;\n\n  min-height: 30px;\n}\n\n.text-editor-menu__select > ul > li:first-child {\n  padding-top: 6px;\n}\n\n.text-editor-menu__select > ul > li:last-child {\n  padding-bottom: 6px;\n}\n\n.text-editor-menu__select > ul > li:hover:not(.disabled) {\n  background-color: rgba(0, 0, 0, 0.12);\n}\n\n.text-editor-menu__select > ul > li.disabled {\n  opacity: 0.6;\n}\n\n.text-editor-menu__select > ul > li > * {\n  margin: 0;\n  white-space: nowrap;\n}\n";
+var menuSelectStyles = ".text-editor-menu__select {\n  position: relative;\n  border: 1px solid rgba(0, 0, 0, 0.12);\n\n  display: flex;\n\n  border-radius: 2px;\n}\n\n.text-editor-menu__select > .text-editor-menu__select__selected {\n  display: flex;\n  align-items: center;\n\n  user-select: none;\n\n  padding: 0 10px;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n}\n\n.text-editor-menu__select > ul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n\n  position: absolute;\n  z-index: 100;\n  top: 100%;\n  left: -1px;\n\n  display: none;\n  /*display: flex;*/\n  flex-direction: column;\n\n  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);\n  border: 1px solid rgba(0, 0, 0, 0.12);\n  background-color: white;\n}\n\n.text-editor-menu__select.open > ul {\n  display: flex;\n}\n\n.text-editor-menu__select > ul > li {\n  padding: 4px 10px;\n  box-sizing: border-box;\n  cursor: pointer;\n  white-space: nowrap;\n\n  display: flex;\n  align-items: center;\n\n  min-height: 30px;\n  user-select: none;\n}\n\n.text-editor-menu__select > ul > li:first-child {\n  padding-top: 6px;\n}\n\n.text-editor-menu__select > ul > li:last-child {\n  padding-bottom: 6px;\n}\n\n.text-editor-menu__select > ul > li:hover:not(.disabled) {\n  background-color: rgba(0, 0, 0, 0.12);\n}\n\n.text-editor-menu__select > ul > li.disabled {\n  opacity: 0.2;\n}\n\n.text-editor-menu__select > ul > li > * {\n  margin: 0;\n  white-space: nowrap;\n}\n";
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -217,7 +217,10 @@ function (_React$Component) {
         }
       }, selected ? selected.label : ''), React.createElement("ul", null, options.map(function (option) {
         return React.createElement("li", {
-          onClick: function onClick() {
+          className: classnames({
+            disabled: option.disabled
+          }),
+          onClick: option.disabled ? null : function () {
             if (option.value !== selected.value) {
               onChange(option.value, selected.value);
             }
