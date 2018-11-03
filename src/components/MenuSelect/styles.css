@@ -63,12 +63,12 @@
   padding-bottom: 6px;
 }
 
-.text-editor-menu__select > ul > li:hover:not(.disabled) {
+.text-editor-menu__select > ul > li:hover {
   background-color: rgba(0, 0, 0, 0.12);
 }
 
 .text-editor-menu__select > ul > li.disabled {
-  opacity: 0.2;
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .text-editor-menu__select > ul > li > * {

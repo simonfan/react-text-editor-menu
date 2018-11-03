@@ -68,8 +68,8 @@ class MenuSelect extends React.Component {
             className={classnames({
               disabled: option.disabled
             })}
-            onClick={option.disabled ? null : () => {
-              if (option.value !== selected.value) {
+            onClick={() => {
+              if (!option.disabled && option.value !== selected.value) {
                 onChange(option.value, selected.value)
               }
 
